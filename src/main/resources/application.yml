@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+#配置jsp页面
+#页面默认前缀目录
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
