@@ -14,16 +14,17 @@ import java.util.List;
 
 public interface StudentDao {
 
+    // 添加学生信息
     void addStudent(Student student);
-
+    // 删除学生信息
     void deleteStudent(List<String> ids);
-
+    // 编辑学生信息
     void editStudent(Student student);
-
+    // 获取全部学生信息
     List<Student> getAllStudent();
-
+    // 通过学号获取学生信息
     Student getStudentById(String id);
-
+    // 通过姓名获取学生信息
     List<Student> getStudentByName(String name);
 
 

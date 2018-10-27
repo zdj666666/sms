@@ -23,6 +23,22 @@ public class Student implements Serializable {
     private Date enrolment;     //入学年份
     private boolean status;     //是否毕业
 
+    public Student() {
+        super();
+    }
+
+    public Student(String id, String name, Integer age, String sex, String classes, String teacher, Date createTime, Date enrolment, boolean status) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.classes = classes;
+        this.teacher = teacher;
+        this.createTime = createTime;
+        this.enrolment = enrolment;
+        this.status = status;
+    }
+
     public String getId() {
         return id;
     }

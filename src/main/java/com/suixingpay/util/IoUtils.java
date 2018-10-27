@@ -10,7 +10,7 @@ package com.suixingpay.util;
 
 import com.suixingpay.exception.ServerException;
 import java.io.*;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class IoUtils {
@@ -21,11 +21,19 @@ public class IoUtils {
      * @param <T>
      */
     public static <T> void writeStudentInfo(T t){
+        File file = null;
+        FileOutputStream fileOutputStream = null;
+        ObjectOutputStream objectOutputStream = null;
 
         try {
-            // 拿到学生数据库的txt输出文件流
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("F:\\studentDb.txt"));
-            // 把对象写入到文件中
+            file = new File("F:\\studentDb.txt");
+            fileOutputStream = new FileOutputStream(file, true);
+            //如果数据库文件还没有被创建就创建有标识头的对象流，否则创建自定义的没有标识头的对象流
+            if (file.length() < 1) {
+                objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            } else {
+                objectOutputStream = new MyObjectOutputStream(fileOutputStream);
+            }
             objectOutputStream.writeObject(t);
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,20 +49,31 @@ public class IoUtils {
      */
     public static <T> List<T> readStudentInfo(Class<T> clazz){
 
+        // 保存文件中保存的对象
+        List<T> list = new ArrayList<T>();
+        ObjectInputStream objectInputStream = null;
+        FileInputStream fileInputStream = null;
         try {
-            // 拿到学生数据库的txt输入文件流
-            ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("F:\\studentDb.txt"));
-            // 拿到txt保存的所有的对象
-            T[] object = (T[])objectInputStream.readObject();
-            List<T> t = Arrays.asList(object);
-            return t;
+            fileInputStream = new FileInputStream("F:\\studentDb.txt");
+            objectInputStream = new ObjectInputStream(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();
             throw new ServerException("服务器出现故障，请尽快联系管理员！");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            throw new ServerException("服务器出现故障，请尽快联系管理员！");
-
         }
+        // 循环取出所有的对象
+        while (true) {
+            try {
+                T t = (T) objectInputStream.readObject();
+                list.add(t);
+            } catch (EOFException e) {
+                e.printStackTrace();
+                // 达到文件末尾退出循环
+                break;
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new ServerException("服务器出现故障，请尽快联系管理员！");
+            }
+        }
+        return list;
     }
 }
