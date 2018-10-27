@@ -38,6 +38,16 @@ public class IoUtils {
         } catch (IOException e) {
             e.printStackTrace();
             throw new ServerException("服务器出现故障，请尽快联系管理员！");
+        }finally {
+            try {
+                if (fileOutputStream != null)
+                    fileOutputStream.close();
+                if (objectOutputStream != null)
+                    objectOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new ServerException("服务器出现故障，请尽快联系管理员！");
+            }
         }
     }
 
@@ -73,6 +83,15 @@ public class IoUtils {
                 e.printStackTrace();
                 throw new ServerException("服务器出现故障，请尽快联系管理员！");
             }
+        }
+        try {
+            if (fileInputStream != null)
+                fileInputStream.close();
+            if (objectInputStream != null)
+                objectInputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new ServerException("服务器出现故障，请尽快联系管理员！");
         }
         return list;
     }
