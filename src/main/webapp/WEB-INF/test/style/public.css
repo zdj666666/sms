@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+*{padding:0; margin:0; border:0; list-style:none;}
+body{margin:0;}
+a{text-decoration:none;}
+
+
+/*首页footer部分*/
+/*footer*/
+.index_footer{width:100%; height:424px; float:left; background:url(../img/footerbg.jpg) no-repeat left top; background-size:100% 424px;}
+.index_footer #f1{width:1260px; height:424px; margin:0 auto;}
+.index_footer #f1 .link{width:190px; height:343px; float:left; padding:64px 0 0 91px; font-size:16px; font-family:"微软雅黑";}
+.index_footer #f1 .link dt{padding-bottom:20px; width:76px; height:17px;}
+.index_footer #f1 .link dd{padding-bottom:18px; }
+.index_footer #f1 .link dd:hover{color:#e0e3e1;}
+.index_footer #f1 .website{padding-top:64px; font-size:14px; float:left; width:190px;}
+.index_footer #f1 .website dt{padding-bottom:20px; width:76px; height:17px;}
+.index_footer #f1 .website dd:hover{color:#e0e3e1;}
+.index_footer #f1 .website .w1{line-height:38px; padding-bottom:8px; padding-left:49px; background: url(../img/ficon11.gif) no-repeat left top;}
+.index_footer #f1 .website .w2{background: url(../img/ficon2.gif) no-repeat left top;}
+.index_footer #f1 .website .w3{background: url(../img/ficon3.gif) no-repeat left top;}
+.index_footer #f1 .website .w4{background: url(../img/ficon4.gif) no-repeat left top;}
+.index_footer #f1 .website .w5{background: url(../img/ficon5.gif) no-repeat left top;}
+.index_footer #f1 .f3{padding-top:64px; width:263px; float:left;}
+.index_footer #f1 .f3 dt{padding-bottom:20px; width:76px; height:17px;}
+.index_footer #f1 .f3 dd{padding-bottom:20px;}
+
+
+.index_footer #f1 .f4{width:445px; height:314px; float:left; padding-top:62px;}
+.index_footer #f1 .f4 .top{width:449px; height:199px; }
+.index_footer #f1 .f4 .top .ft4{padding-bottom:46px; padding-right:300px;}
+.index_footer #f1 .f4 .top .d4{width:130px; height:129px; padding:7px 0 0 48px; float:left;}
+.index_footer #f1 .f4 .top .d4 dt{width:90px; height:98px; background:url(../img/erweima.gif) no-repeat left top;}
+.index_footer #f1 .f4 .top .d4 dt:hover{width:90px; height:98px; background:url(../img/erweima01.gif) no-repeat left top;}
+.index_footer #f1 .f4 .top .d4 dd{width:90px; height:10px; font-size:9px; font-weight:bold;}
+.index_footer #f1 .f4 .bottom{width:444px; height:108px; background: url(../img/fotobg.jpg) no-repeat left top;}
+.index_footer #f1 .f4 .bottom img{padding:27px 0 0 52px;}
+
+
+/*二级页1*/
+/*header*/
+.header1{width:100%; height:316px; background: url(../img/er1banner.jpg) no-repeat left top; background-size:100% 350px;}
+.header1 .header{width:1260px; margin:0 auto; height:316px; font-size:14px; color:#fff;}
+.header1 .header h2{padding:122px 0 0 551px; float:left;}
+.header1 .header .rightsidebar1{width:201px; line-height:22px; float:left; margin:36px 0 19px 277px; background: url(../img/rightsidebar1bg.png) no-repeat left top; padding-left:8px;}
+.header1 .header .rightsidebar1:hover{background: url(../img/rightsidebar11bg.png) no-repeat left top;}
+.header1 .header .rightsidebar2:hover{background: url(../img/rightsidebar22bg.png) no-repeat left top;}
+.header1 .header .rightsidebar2{width:128px; line-height:23px; float:left;margin-left:321px; padding-left:14px; background: url(../img/rightsidebar2bg.png) no-repeat left top; }
+.header1 .header .rightsidebar2 a{color:#fff; text-decoration:none;}
+.header1 .header nav{width:818px; height:45px;float:left; padding-left:300px; padding-top:45px;}
+.header1 .header nav li{float:left; margin-right:6px;height:40px;}
+.header1 .header nav li:hover{ transform:translate(0,-3px);}
+ /*footer*/
+.footer{background:url(../img/er1footerbg.jpg) no-repeat left top; background-size:100% 424px; color:#e0e3e1;}
+.footer #f1 .website .w1{line-height:38px; padding-bottom:8px; padding-left:49px; background: url(../img/ficon11.gif) no-repeat left top;}
+.footer #f1 .website .w2{background: url(../img/ficon22.gif) no-repeat left top;}
+.footer #f1 .website .w3{background: url(../img/ficon33.gif) no-repeat left top;}
+.footer #f1 .website .w4{background: url(../img/ficon44.gif) no-repeat left top;}
+.footer #f1 .website .w5{background: url(../img/ficon55.gif) no-repeat left top;}
+.footer #f1 .link dd:hover{color:#f9952a;}
+.footer #f1 .website dd:hover{color:#f9952a;}
+.footer #f1 .f4 .bottom{width:444px; height:108px; background: url(../img/foto1bg.gif) no-repeat left top;}
+.footer #f1 .f4 .top .d4 dt{background:url(../img/erweima1.gif) no-repeat left top;}
+.footer #f1 .f4 .top .d4 dt:hover{background:url(../img/erweima11.gif) no-repeat left top;}
+
+

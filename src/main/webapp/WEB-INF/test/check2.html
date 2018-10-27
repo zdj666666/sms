@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SuiXingSchool管理系统</title>
+    <style src="//at.alicdn.com/t/font_892202_u3s68zppgw9.css"></style>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+
+        }
+        #wrap{
+            width: 95%;
+            margin: 0px 2%;
+            padding: 0px 0.5%;
+            height: 100%;
+        }
+        #wrap .header{
+            display: flex;
+            height: 60px;
+            border-bottom: solid 2px #eeeeee;
+        }
+        .header .header_left{
+            width: 20%;
+
+            line-height: 60px;
+            font-size: 20px;
+        }
+        .header .header_right{
+            flex: 1;
+            text-align: right;
+        }
+        .header .header_right ul{
+            overflow: hidden;
+            line-height: 60px;
+            position: absolute;
+            right: 80px;
+        }
+        .header .header_right li{
+            list-style: none;
+            float: left;
+        }
+        /*content*/
+        .content{
+            display: flex;
+        }
+        .content .content_left{
+            width: 12%;
+            padding-top: 20px;
+            border-right: solid 1px #eeeeee;
+        }
+        .content .content_left li{
+            list-style: none;
+            height: 40px;
+            line-height: 40px;
+            padding: 10px 0px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .content .content_left li a{
+            display: inline-block;
+            width: 80%;
+            margin: 0 auto;
+            text-decoration: none;
+            color: black;
+        }
+        .content .content_left li a:hover{
+            border-radius: 20px;
+            background:rgba(148,208,243,0.8);
+            transition: background .3s ease, color .3s ease;
+            color: #ffffff;
+        }
+        .content .content_right{
+            flex: 1;
+            background:#eceff4;
+            height:100vh;
+            padding-top:20px;
+            padding-left:40px;
+        }
+        .content .content_right .detailsTit{
+            width:100%;
+            height:30px;
+            font-size:12px;
+        }
+        .content .content_right  .detailsCard{
+            margin-top:10px;
+            width:90%;
+            margin-left:30px;
+            margin-bottom: 50px;;
+        }
+        .content .content_right  .detailsCard .personalInfo{
+            background:#fff;
+            height:200px;
+            box-shadow: rgba(45, 45, 45, 0.15) 6px 8px 20px 0px;
+        }
+        .content .content_right  .detailsCard .personalInfo .cardTop{
+            height:35px;
+            border-bottom:2px solid #f3f9fe;
+            font-size:14px;
+            padding-left:20px;
+        }
+        .content .content_right  .detailsCard .personalInfo .cardTop .tit{
+            width:90%;
+            line-height:35px;
+            float:left;
+        }
+        .content .content_right  .detailsCard .personalInfo .cardTop .modify{
+            float: left;
+            line-height:35px;
+            width:50px;
+            border-radius: 5px;
+
+        }
+        .content .content_right  .detailsCard .personalInfo .cardBottom .infoList {
+            padding-top:2%;
+            width:95%;
+            padding-left:5%;
+            float: left;
+        }
+        .content .content_right  .detailsCard .personalInfo .cardBottom .infoList  li{
+            width:30%;
+            float: left;
+            line-height:40px;
+
+
+        }
+        .content .content_right  .detailsCard .personalInfo .cardBottom .infoList .stuName{
+            background:#FFFFFF;
+            border:0;
+            padding-left:20px;
+            width:100px;
+            height:22px;
+            margin-left:10px;
+        }
+        .content .content_right  .detailsCard .personalInfo .cardBottom .pic{
+            margin-left:40px;
+            margin-top:10px;
+            width:92px;
+            height:126px;
+            border:2px solid #e6ebf1;
+            float: left;
+        }
+        .content .content_right  .detailsCard .personalInfo .cardBottom .intro{
+            width:70%;
+            float:left;
+            font-size:14px;
+            line-height:20px;
+            padding-left:20px;
+            color:#555454;
+            margin-top:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="header_left">学生管理系统</div>
+            <div class="header_right">
+                <ul>
+                    <li class="welwords">欢迎你</li>
+                    <li class="out">
+                        <span></span>
+                        <i>退出</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content_left">
+                <ul>
+                    <li><a href="#">one</a></li>
+                    <li><a href="#">one</a></li>
+                    <li><a href="#">one</a></li>
+                </ul>
+            </div>
+            <div class="content_right">
+               <div class="detailsTit">
+                   <p>个人信息详情 Personal information details</p>
+               </div>
+                <div class="detailsCard">
+                    <div class="personalInfo">
+                        <div class="cardTop">
+                            <div class="tit">个人介绍</div>
+                            <div class="modify">编辑</div>
+                        </div>
+                        <div class="cardBottom">
+                            <div class="pic">
+                                <img src="img/pic1.jpg" width="90">
+                            </div>
+                            <div class="intro">
+                                1、本人性格开朗、为人诚恳、乐观向上、兴趣广泛、拥有较强的组织能力和适应能力、并具有较强的管理策划与组织管理协调能力。<br/>
+                                2、忠实诚信,讲原则，说到做到，决不推卸责任；有自制力，做事情始终坚持有始有终，从不半途而废；肯学习,有问题不逃避,愿意虚心向他人学习；用100%的热情和精力投入到工作中。<br/>
+                                3、活泼开朗、乐观向上、兴趣广泛、适应力强、上手快、勤奋好学、脚踏实地、认真负责、坚毅不拔、吃苦耐劳、勇于迎接新挑战。<br/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detailsCard">
+                    <div class="personalInfo">
+                        <div class="cardTop">
+                            <div class="tit">基本信息</div>
+                            <div class="modify" onclick="edit(this)">编辑</div>
+                        </div>
+                        <div class="cardBottom">
+                            <ul class="infoList" id="info">
+                                <li>姓名:<input type="text" class="stuName" disabled value="啦啦啦"/></li>
+                                <li>学号:<input type="text" class="stuName" disabled value="041540601"/></li>
+                                <li>年龄:<input type="text" class="stuName" disabled value="20"/></li>
+                                <li>性别:
+                                    <select disabled="disabled" class="stuName">
+                                        <option>男</option>
+                                        <option>女</option>
+                                    </select>
+
+                                </li>
+                                <li>班级:<input type="text" class="stuName" disabled value="软件工程"/></li>
+                                <li>入学年份:<input type="text" class="stuName" disabled value="2015"/></li>
+                                <li>是否毕业:
+                                    <select disabled="disabled" class="stuName">
+                                        <option>是</option>
+                                        <option>否</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function edit(obj){
+            obj.innerHTML = "保存"
+            var info = document.getElementById("info");
+            var groupInput = info.getElementsByTagName("input");
+            var groupSelect = info.getElementsByTagName("select");
+            for(var i = 0 ;i < groupInput.length; i++){
+                groupInput[i].disabled = false;
+                groupInput[i].style.border = "1px solid #d4d2d2";
+                groupInput[i].style.borderRadius = "5px"
+            }
+            for(var j = 0 ; j < groupSelect.length; j++){
+                groupSelect[j].disabled = true;
+                groupSelect[j].style.border = "1px solid #d4d2d2";
+            }
+        }
+    </script>
+</body>
+</html>

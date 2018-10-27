@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>学生管理系统</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #wrap{
+            width: 95%;
+            margin: 0px 2%;
+            padding: 0px 0.5%;
+            height: 100%;
+        }
+        #wrap .header{
+            display: flex;
+            height: 60px;
+            border-bottom: solid 2px #eeeeee;
+        }
+        .header .header_left{
+            width: 20%;
+            line-height: 60px;
+            font-size: 20px;
+        }
+        .header .header_right{
+            flex: 1;
+            text-align: right;
+        }
+        .header .header_right ul{
+            overflow: hidden;
+            line-height: 60px;
+            position: absolute;
+            right: 80px;
+        }
+        .header .header_right li{
+            list-style: none;
+            float: left;
+        }
+        /*content*/
+        .content{
+            display: flex;
+        }
+        .content .content_left{
+            width: 10%;
+            padding-top: 20px;
+            border-right: solid 1px #eeeeee;
+        }
+        .content .content_left li{
+            list-style: none;
+            height: 40px;
+            line-height: 40px;
+            padding: 10px 0px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .content .content_left li a{
+            display: inline-block;
+            width: 80%;
+            margin: 0 auto;
+            text-decoration: none;
+            color: black;
+        }
+        .content .content_left li a:hover{
+            border-radius: 20px;
+                    background-color: #2099e9;
+            color: #ffffff;
+        }
+        .content .content_right{
+            flex: 1;
+        }
+        .content .content_right .search{
+            height: 44px;
+            background-color: #2099e5;
+            color: black;
+            border-bottom: solid 1px #000000;
+        }
+        .content .content_right .butt{
+            height: 44px;
+            background-color: #eeeeee;
+            color: black;
+        }
+        .info{
+            width: 100%;
+        }
+        .info .info_table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border:solid 1px #dfdfdf;
+        }
+        .info .info_table tr{
+            height: 50px;
+        }
+        .info .info_table tr th{
+            background-color: #edeef0;
+            font-weight: normal;
+            border-right: 1px solid #cbccce;
+            line-height: 50px;
+            text-align: left;
+            padding-left: 19px;
+        }
+        .info .info_table tr th.change{
+            text-align: center;
+            padding-left: 0px;
+        }
+        .info .info_table tbody tr{
+            border-bottom: solid 1px #dfdfdf;
+        }
+        .info .info_table tbody tr td{
+            padding-left: 20px;
+        }
+        .info .info_table tbody tr .change_butt{
+            padding-left: 0px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="header_left">学生管理系统</div>
+            <div class="header_right">
+                <ul>
+                    <li class="welwords">欢迎你</li>
+                    <li class="out">
+                        <span></span>
+                        <i>退出</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content_left">
+                <ul>
+                    <li><a href="#">one</a></li>
+                    <li><a href="#">one</a></li>
+                    <li><a href="#">one</a></li>
+                </ul>
+            </div>
+            <div class="content_right">
+                <div class="search">
+                    查询
+                </div>
+                <div class="butt">
+                    按钮
+                </div>
+                <div class="info">
+                    <table class="info_table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" class="check">姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                                <th>班级</th>
+                                <th>指导老师</th>
+                                <th>入学年份</th>
+                                <th>状态</th>
+                                <th>创建时间</th>
+                                <th class="change">修改</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="check">杨凌</td>
+                                <td>21</td>
+                                <td>女</td>
+                                <td>150511</td>
+                                <td>刘春明</td>
+                                <td>2015.9.1</td>
+                                <td>xx</td>
+                                <td>2018.10.27</td>
+                                <td><input type="button" value="修改" class="change_butt"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="check">杨凌</td>
+                                <td>21</td>
+                                <td>女</td>
+                                <td>150511</td>
+                                <td>刘春明</td>
+                                <td>2015.9.1</td>
+                                <td>xx</td>
+                                <td>2018.10.27</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="check">杨凌</td>
+                                <td>21</td>
+                                <td>女</td>
+                                <td>150511</td>
+                                <td>刘春明</td>
+                                <td>2015.9.1</td>
+                                <td>xx</td>
+                                <td>2018.10.27</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
