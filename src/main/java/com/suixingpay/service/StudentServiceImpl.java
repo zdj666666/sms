@@ -23,7 +23,11 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public void addStudent(Student student) {
-
+        Student stu = studentDao.getStudentById(student.getId());
+        if(stu==null){
+            System.out.println("主键id不重复，可用");
+            studentDao.addStudent(student);
+        }
 
 
     }
