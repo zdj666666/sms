@@ -95,4 +95,43 @@ public class IoUtils {
         }
         return list;
     }
+
+    /**
+     * 覆盖原有文件对象
+     * @param list
+     * @param <T>
+     */
+    public static <T> void coverStudentInfo(List<T> list){
+
+        File file = null;
+        FileOutputStream fileOutputStream = null;
+        ObjectOutputStream objectOutputStream = null;
+        file = new File("F:\\studentDb.txt");
+        try {
+            for(int i = 0;i<list.size();i++){
+                // 第一次覆盖时需要覆盖文件并且打印出序列化的头否则不需要
+                if(i==0){
+                    fileOutputStream = new FileOutputStream(file);
+                    objectOutputStream = new ObjectOutputStream(fileOutputStream);
+                }else {
+                    fileOutputStream = new FileOutputStream(file, true);
+                    objectOutputStream = new MyObjectOutputStream(fileOutputStream);
+                }
+                objectOutputStream.writeObject(list.get(i));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new ServerException("服务器出现故障，请尽快联系管理员！");
+        } finally {
+            try {
+                if (fileOutputStream != null)
+                    fileOutputStream.close();
+                if (objectOutputStream != null)
+                    objectOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new ServerException("服务器出现故障，请尽快联系管理员！");
+            }
+        }
+    }
 }
