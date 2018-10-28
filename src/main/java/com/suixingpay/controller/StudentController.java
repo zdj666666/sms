@@ -21,12 +21,10 @@ public class StudentController {
     StudentService studentService;
 
 
-    @RequestMapping(value = "/check")
+    @RequestMapping(value = "/login")
     public String itemList3() throws Exception{
 
-        Student student=studentService.getStudentById("1");
-        System.out.println(student.getName());
-        return "check";
+        return "login";
     }
 
     @RequestMapping(value={"/add.action"})

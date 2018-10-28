@@ -27,7 +27,7 @@
     <div class="content">
         <div class="content_left">
             <ul>
-                <li><a href="#">首页</a></li>
+                <li><a href="login">首页</a></li>
                 <li><a href="#">学生管理</a></li>
                 <li><a href="#">老师管理</a></li>
                 <li><a href="#">管理员</a></li>
