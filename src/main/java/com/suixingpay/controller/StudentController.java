@@ -41,6 +41,7 @@ public class StudentController {
        List<Student> perStudent=studentService.getStudentByName(getName);
         if(perStudent.isEmpty()||perStudent==null){
             System.out.println("您的用户名输入错误");
+            //返回登录页面
             return "login";
         }else{
             System.out.println("您的用户名输入正确！！！");
