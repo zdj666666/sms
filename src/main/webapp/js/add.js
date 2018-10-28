@@ -4,11 +4,11 @@ function isStuNumber(){
     var StunumberMsg = document.getElementById("StunumberMsg");
     var Stunumberreg =/^1[0-9]{7}$/;
     if(Stunumber.value==""){
-        StunumberMsg.innerHTML="学号不能为空!";
+        StunumberMsg.innerText="学号不能为空!";
         StunumberMsg.style.color="red";
     }
     else if(Stunumberreg.test(Stunumber.value)){
-        StunumberMsg.innerHTML="?";
+        StunumberMsg.innerHTML="ok";
         StunumberMsg.style.color="green";
     }
     else{
@@ -27,11 +27,11 @@ function isAge(){
         AgeMsg.style.color="red";
     }
     else if(Agereg.test(Age.value)){
-        AgeMsg.innerHTML="?";
+        AgeMsg.innerHTML="ok";
         AgeMsg.style.color="green";
     }
     else{
-        AgeMsg.innerHTML="请输入真实年龄!"
+        AgeMsg.innerHTML="请输入真实年龄!";
         AgeMsg.style.color="red";
     }
 }
@@ -46,7 +46,7 @@ function isName(){
         userNameMsg.style.color="red";
     }
     else if(userNamereg.test(userName.value)){
-        userNameMsg.innerHTML="?";
+        userNameMsg.innerHTML="ok";
         userNameMsg.style.color="green";
     }
     else{
@@ -64,7 +64,7 @@ function isClass(){
         ClassMsg.style.color="red";
     }
     else if(Classreg.test(Class.value)){
-        ClassMsg.innerHTML="?";
+        ClassMsg.innerHTML="ok";
         ClassMsg.style.color="green";
     }
     else{
@@ -82,7 +82,7 @@ function isTeacher(){
         teacherMsg.style.color="red";
     }
     else if(teacherreg.test(teacher.value)){
-        teacherMsg.innerHTML="?";
+        teacherMsg.innerHTML="ok";
         teacherMsg.style.color="green";
     }
     else{

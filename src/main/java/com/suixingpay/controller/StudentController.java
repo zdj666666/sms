@@ -15,19 +15,16 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/student")
-public class stucontroller {
+public class StudentController {
 
     @Autowired
     StudentService studentService;
 
 
-    @RequestMapping(value = "/check")
+    @RequestMapping(value = "/login")
     public String itemList3() throws Exception{
 
-       List<Student> perStudent=studentService.getAllStudent();
-        System.out.println("===========_____-+++++"+perStudent.get(0).getName());
-
-        return "check";
+        return "login";
     }
 
     @RequestMapping(value={"/add.action"})
@@ -38,8 +35,18 @@ public class stucontroller {
         stu.getAge(12);
         stu.getCreateTime(new Date());
         studentService.addStudent(stu);
-
         return "add";
+    }
+
+    @RequestMapping(value={"/details.action"})
+    public String details(){
+        Student stu = new Student();
+        stu.setId("1");
+        stu.setName("xl");
+        stu.getAge(12);
+        stu.getCreateTime(new Date());
+        studentService.addStudent(stu);
+        return "details";
     }
 
 

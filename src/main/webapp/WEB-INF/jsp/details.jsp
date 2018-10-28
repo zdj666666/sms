@@ -4,7 +4,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>学生管理系统</title>
-    <link rel="stylesheet" type="text/css" href="../style/details.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/details.css">
     <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_892603_mcihuu1tybb.css">
 
 
@@ -12,7 +12,7 @@
 <body>
 <div id="wrap">
     <div class="header">
-        <div class="header_left"><img src="../img/logo.png" alt="" width="150"></div>
+        <div class="header_left"><img src="${pageContext.request.contextPath}/img/logo.png" alt="" width="150"></div>
         <div class="header_right">
             <ul>
                 <li class="welwords">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="cardBottom">
                         <div class="pic">
-                            <img src="../img/adminPic1.png" alt="" width="94" >
+                            <img src="${pageContext.request.contextPath}/img/adminPic1.png" alt="" width="94" >
                         </div>
                         <textarea class="intro"  readonly="readonly" id="intro">做事塌实认真，能吃苦耐劳；学习潜力强，能够很快的理解新事物；性格开朗，诚实正直，谦和自信，乐于进取乐于奉献，勤奋好学，用心上进，有较强的社会适应潜力。工作踏实，认真细致，具有强烈的事业心和工作职责心，善于处理人际关系，具有极佳的团队合作精神。
                             </textarea>
@@ -93,7 +93,7 @@
         </div>
     </div>
 </div>
-<script src="../js/details.js"></script>
+<script src="${pageContext.request.contextPath}/js/details.js"></script>
 </body>
 </html>
 
