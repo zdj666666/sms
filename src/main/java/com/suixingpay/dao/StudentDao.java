@@ -9,9 +9,11 @@
 package com.suixingpay.dao;
 
 import com.suixingpay.pojo.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface StudentDao {
 
     // 添加学生信息
@@ -26,6 +28,4 @@ public interface StudentDao {
     Student getStudentById(String id);
     // 通过姓名获取学生信息
     List<Student> getStudentByName(String name);
-
-
 }

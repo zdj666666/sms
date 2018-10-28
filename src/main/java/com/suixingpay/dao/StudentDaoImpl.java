@@ -10,10 +10,14 @@ package com.suixingpay.dao;
 
 import com.suixingpay.pojo.Student;
 import com.suixingpay.util.IoUtils;
+import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+@Service
 public class StudentDaoImpl implements StudentDao{
     @Override
     public void addStudent(Student student) {
@@ -33,25 +37,76 @@ public class StudentDaoImpl implements StudentDao{
                 }
             }
         }
+        // 覆盖原有文件信息
+        IoUtils.coverStudentInfo(students);
     }
 
     @Override
     public void editStudent(Student student) {
 
+        // 获得文件中所有的对象
+        List<Student> students = IoUtils.readStudentInfo(Student.class);
+        Iterator<Student> iterator = students.listIterator();
+        while (iterator.hasNext()) {
+            // 如果id相同则移除掉id相同的对象
+            if((iterator.next().getId()).equals(student.getId())){
+                iterator.remove();
+                break;
+            }
+        }
+        // 把修改之后的对象添加进来
+        students.add(student);
+        // 覆盖掉文件中的序列化对象
+        IoUtils.coverStudentInfo(students);
     }
 
     @Override
     public List<Student> getAllStudent() {
-        return null;
+        return IoUtils.readStudentInfo(Student.class);
     }
 
+    /**
+     * 根据学号查询学生信息，如果没有对应的学生则返回null
+     * @param id 需要查询的学号
+     * @return
+     */
     @Override
     public Student getStudentById(String id) {
-        return null;
+
+        // 获得文件中所有的对象
+        List<Student> students = IoUtils.readStudentInfo(Student.class);
+        Iterator<Student> iterator = students.listIterator();
+        Student result = null;
+        while (iterator.hasNext()) {
+            Student student = iterator.next();
+            // 如果id相同则则通过对象保存下来
+            if ((student.getId()).equals(id)) {
+                result = student;
+                break;
+            }
+        }
+        return result;
     }
 
+    /**
+     * 根据姓名查询学生的信息，如果没有查询到则返回一个空的集合
+     * @param name 需要查询的名称
+     * @return
+     */
     @Override
     public List<Student> getStudentByName(String name) {
-        return null;
+        // 获得文件中所有的对象
+        List<Student> students = IoUtils.readStudentInfo(Student.class);
+        Iterator<Student> iterator = students.listIterator();
+        // 保存和查询名称相同的对象
+        List<Student> studentList = new ArrayList<Student>();
+        while (iterator.hasNext()) {
+            Student student = iterator.next();
+            // 如果name相同则保存在集合中
+            if ((student.getName()).equals(name)) {
+                studentList.add(student);
+            }
+        }
+        return studentList;
     }
 }

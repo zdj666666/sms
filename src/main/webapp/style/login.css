@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+/* CSS Document */
+*{padding:0; margin:0; border:0; list-style:none;}
+body{margin:0;}
+a{text-decoration:none;}
+
+
+/*登录界面css样式表*/
+.login{width:100%; height:100vh; position:relative; position:relative;height:100vh; }
+.login video{width:100%; object-fit:fill; height:100vh; position:absolute;}
+.login .bg{width:711px; height:367px; position:relative; left:50%; top:50%; margin-top:-184px; margin-left:-356px; float:left; background: url(../img/loginbg.png) no-repeat left top;}
+.login .bg .usersName{width:267px; height:36px; position:absolute; left:398px; top:118px; background:#FFF; padding-left:10px; border-radius:10px;}
+.login .bg .loginPassword{width:267px; height:36px; position:absolute; left:398px; top:186px; background:#FFF; padding-left:10px;border-radius:10px;}
+.login .bg .loginBtn{width:88px; height:30px; position:absolute; left:429px; top:263px; }
+.login .bg .reBtn{width:88px; height:30px; position:absolute; left:554px; top:263px; }
+/*.login .bg .loginBtn:hover{background:url(../img/loginBtn_hover.png) no-repeat left top;}*/
+/*.login .bg .reBtn:hover{background:url(../img/regisiterBtn_hover.png) no-repeat left top;}*/
+.login .help{width:300px; height:12px; font-size:12px; color:#494848; position:absolute; left:418px; top:320px;}
+.login .help li{float:left;padding-left:9px; padding-right:10px; background: url(../../img/loginlibg.gif) no-repeat right center;}
+.login .help li a{color:#494848;}
+.login .help .ll{background:none;}
+.login .help li:hover{color:#000;}
+.login .help li a:hover{color:#000;}
+
+.login .back{width:100px; height:20px; position:absolute; left:425px; top:500px; z-index:2; font-size:13px; }
+.login .back a{ color:#f9f4f4;}
+
+
