@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <title>SuiXingSchool</title>
-<link rel="stylesheet" type="text/css" href="WEB-INF/style/login.css" />
+<link rel="stylesheet" type="text/css" href="style/login.css" />
 </head>
 
 <body>
 	<div class="login">
-    	<video src="WEB-INF/fla/loginvideo.mp4" loop autoplay></video>
+    	<video src="fla/loginvideo.mp4" loop autoplay></video>
         <div class="bg">
         <form method="post" action="WEB-INF/jsp/check.html">
         <input type="text" placeholder="用户名" class="usersName" autofocus id="name" />
         <input type="password" placeholder="密码"  class="loginPassword" id="password" />
-        <input type="submit" class="loginBtn" onclick="submitBtn(this)" value="登录"/>
-        <input type="button" class="reBtn" value="注册" />
+        <input type="submit" class="loginBtn" onclick="submitBtn(this)" value=" "/>
+        <input type="button" class="reBtn" value="" />
         </form>
         <ul class="help">
         	<li>回到主页</a></li>
@@ -23,7 +23,7 @@
         </ul>
         </div>
     </div>
-    <script src="WEB-INF/js/login.js"></script>
+    <script src="js/login.js"></script>
     <script>
         function submitBtn(obj){
             var name = document.getElementById("name");

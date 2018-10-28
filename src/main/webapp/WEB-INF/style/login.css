@@ -11,10 +11,10 @@ a{text-decoration:none;}
 .login .bg{width:711px; height:367px; position:relative; left:50%; top:50%; margin-top:-184px; margin-left:-356px; float:left; background: url(../img/loginbg.png) no-repeat left top;}
 .login .bg .usersName{width:267px; height:36px; position:absolute; left:398px; top:118px; background:#FFF; padding-left:10px; border-radius:10px;}
 .login .bg .loginPassword{width:267px; height:36px; position:absolute; left:398px; top:186px; background:#FFF; padding-left:10px;border-radius:10px;}
-.login .bg .loginBtn{width:88px; height:30px; position:absolute; left:429px; top:263px; }
-.login .bg .reBtn{width:88px; height:30px; position:absolute; left:554px; top:263px; }
-/*.login .bg .loginBtn:hover{background:url(../img/loginBtn_hover.png) no-repeat left top;}*/
-/*.login .bg .reBtn:hover{background:url(../img/regisiterBtn_hover.png) no-repeat left top;}*/
+.login .bg .loginBtn{width:88px; height:30px; position:absolute; left:429px; top:263px; background: url(../img/loginBtn.png) no-repeat left top;}
+.login .bg .reBtn{width:88px; height:30px; position:absolute; left:554px; top:263px; background:url(../img/regisiterBtn.png) no-repeat left top;}
+.login .bg .loginBtn:hover{background:url(../img/loginBtn_hover.png) no-repeat left top;}
+.login .bg .reBtn:hover{background:url(../img/regisiterBtn_hover.png) no-repeat left top;}
 .login .help{width:300px; height:12px; font-size:12px; color:#494848; position:absolute; left:418px; top:320px;}
 .login .help li{float:left;padding-left:9px; padding-right:10px; background: url(../img/loginlibg.gif) no-repeat right center;}
 .login .help li a{color:#494848;}
