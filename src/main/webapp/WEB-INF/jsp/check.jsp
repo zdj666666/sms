@@ -26,7 +26,7 @@
                 </li>
                 <li class="out">
                     <span></span>
-                    <a href="../../login.html">退出</a>
+                    <a href="../../../../test/login.html">退出</a>
                 </li>
             </ul>
         </div>
@@ -85,8 +85,8 @@
                             <td><%=stu.getCreateTime()%></td>
                             <td><%=stu.getEnrolment()%></td>
                             <td><%=stu.isStatus()%></td>
-                            <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                            <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
+                            <td><input type="button" value="修改" class="change_butt" onclick="window.open('details?id=<%=stu.getId()%>')"></td>
+                            <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details?id=<%=stu.getId()%>')"></td>
                         </tr>
                     <%}%>
                     </tbody>

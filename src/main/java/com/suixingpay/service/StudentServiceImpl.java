@@ -45,6 +45,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void editStudent(Student student) {
+
+        System.out.print("====================？？？？？？？"+student.getName());
         Student stu = studentDao.getStudentById(student.getId());
         if (stu != null) {
             System.out.println("Users can be modified");
