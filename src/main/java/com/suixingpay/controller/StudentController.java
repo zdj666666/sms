@@ -47,6 +47,7 @@ public class StudentController {
             System.out.println("您的用户名输入正确！！！");
             List<Student> studentsList = studentService.getAllStudent();
             request.setAttribute("allStudent",studentsList);
+           //跳到主页面
             return "check";
         }
 
