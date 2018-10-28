@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.suixingpay.pojo.Student" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2018/10/24
@@ -72,97 +73,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><input type="checkbox" class="checkone">15051122</td>
-                        <td>杨凌</td>
-                        <td>21</td>
-                        <td>女</td>
-                        <td>150511</td>
-                        <td>刘春明</td>
-                        <td>2015.9.1</td>
-                        <td>2015.9.1</td>
-                        <td>否</td>
-                        <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                        <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" class="checkone">15051122</td>
-                        <td>杨凌</td>
-                        <td>21</td>
-                        <td>女</td>
-                        <td>150511</td>
-                        <td>刘春明</td>
-                        <td>2015.9.1</td>
-                        <td>2015.9.1</td>
-                        <td>否</td>
-                        <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                        <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" class="checkone">15051122</td>
-                        <td>杨凌</td>
-                        <td>21</td>
-                        <td>女</td>
-                        <td>150511</td>
-                        <td>刘春明</td>
-                        <td>2015.9.1</td>
-                        <td>2015.9.1</td>
-                        <td>否</td>
-                        <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                        <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" class="checkone">15051122</td>
-                        <td>杨凌</td>
-                        <td>21</td>
-                        <td>女</td>
-                        <td>150511</td>
-                        <td>刘春明</td>
-                        <td>2015.9.1</td>
-                        <td>2015.9.1</td>
-                        <td>否</td>
-                        <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                        <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" class="checkone">15051122</td>
-                        <td>杨凌</td>
-                        <td>21</td>
-                        <td>女</td>
-                        <td>150511</td>
-                        <td>刘春明</td>
-                        <td>2015.9.1</td>
-                        <td>2015.9.1</td>
-                        <td>否</td>
-                        <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                        <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" class="checkone">15051122</td>
-                        <td>杨凌</td>
-                        <td>21</td>
-                        <td>女</td>
-                        <td>150511</td>
-                        <td>刘春明</td>
-                        <td>2015.9.1</td>
-                        <td>2015.9.1</td>
-                        <td>否</td>
-                        <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                        <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" class="checkone">15051122</td>
-                        <td>杨凌</td>
-                        <td>21</td>
-                        <td>女</td>
-                        <td>150511</td>
-                        <td>刘春明</td>
-                        <td>2015.9.1</td>
-                        <td>2015.9.1</td>
-                        <td>否</td>
-                        <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                        <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
-                    </tr>
+                    <%List<Student> reStu=(List<Student>)request.getAttribute("allStudent");%>
+                    <% for(Student stu:reStu){%>
+                        <tr>
+                            <td><input type="checkbox" class="checkone"><%=stu.getId()%></td>
+                            <td><%=stu.getName()%></td>
+                            <td><%=stu.getAge()%></td>
+                            <td><%=stu.getSex()%></td>
+                            <td><%=stu.getClasses()%></td>
+                            <td><%=stu.getTeacher()%></td>
+                            <td><%=stu.getCreateTime()%></td>
+                            <td><%=stu.getEnrolment()%></td>
+                            <td><%=stu.isStatus()%></td>
+                            <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
+                            <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
+                        </tr>
+                    <%}%>
                     </tbody>
                 </table>
             </div>
