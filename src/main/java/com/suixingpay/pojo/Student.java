@@ -22,7 +22,7 @@ public class Student implements Serializable {
     private Date createTime;    //创建时间
     private Date enrolment;     //入学年份
     private boolean status;     //是否毕业
-
+    private static final long serialVersionUID = 1L;
     public Student() {
         super();
     }
