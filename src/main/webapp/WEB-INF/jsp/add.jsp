@@ -33,7 +33,7 @@
                 </li>
                 <li class="out">
                     <span></span>
-                    <a href="check.html">退出</a>
+                    <a href="../../../../test/check.html">退出</a>
                 </li>
             </ul>
         </div>

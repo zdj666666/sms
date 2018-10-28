@@ -1,3 +1,4 @@
+<%@ page import="com.suixingpay.pojo.Student" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -6,7 +7,30 @@
     <title>学生管理系统</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/details.css">
     <link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_892603_mcihuu1tybb.css">
+    <script>
+        function change() {
+            var id = document.getElementById("stuId").value;
+            alert("11111");
+            var name = document.getElementById("stuName").value;
+            alert("22222");
+            var age = document.getElementById("stuAge").value;
+            alert("333333");
+            /*var sex = document.getElementById("stuSex").value;
+            alert("44444444");
+            var classes = document.getElementById("stuClass").value;
+            alert("555555555");
+            var teacher = document.getElementById("stuTeacher").value;
+            alert("6666666");
+            var createTime = document.getElementById("stuCreate").value;
+            alert("77777777");
+            var enrolment = document.getElementById("stuEnro").value;
+            alert("88888888");
+            var status = document.getElementById("stuStatus").value;
+            alert("99999999");*/
+            window.location.href="save?id="+id+"&name="+name+"&age="+age;
+        }
 
+    </script>
 
 </head>
 <body>
@@ -41,6 +65,7 @@
                 Personal informations
 
             </div>
+            <%Student student =(Student)request.getAttribute("student");%>
             <div class="detailsCard">
                 <div class="personalInfo">
                     <div class="cardTop">
@@ -62,27 +87,28 @@
                     <div class="cardTop">
                         <div class="tit">基本资料</div>
                         <input class="modify" onclick="edit(this)" type="submit" value="编辑"/>
+                        <input class="modify" onclick="change()" value="保存"/>
                     </div>
                     <div class="cardBottom">
                         <ul class="infoList" id="info">
-                            <li><label>学号：</label><input type="text" value="01540601" class="stuName" disabled></li>
-                            <li><label>姓名：</label><input type="text" value="啦啦啦" class="stuName" disabled></li>
-                            <li><label>年龄：</label><input type="text" value="18" class="stuName" disabled></li>
+                            <li><label>学号：</label><input type="text" value="<%=student.getId()%>" id="stuId" class="stuName" disabled></li>
+                            <li><label>姓名：</label><input type="text" value="<%=student.getName()%>" id="stuName" class="stuName" disabled></li>
+                            <li><label>年龄：</label><input type="text" value="<%=student.getAge()%>" id="stuAge" class="stuName" disabled></li>
                             <li>
                                 <label>性别：</label>
-                                <select class="stuName">
-                                    <option>男</option>
-                                    <option>女</option>
+                                <select class="stuName" id="studName">
+                                    <option <%if(student.getSex()=="男"){%>value="男"<%}%> >男</option>
+                                    <option <%if(student.getSex()=="男"){%>value="男"<%}%> >女</option>
                                 </select>
                             </li>
-                            <li><label>班级：</label><input type="text" value="软件工程" class="stuName" disabled></li>
-                            <li><label>指导老师：</label><input type="text" value="刘德华" class="stuName" disabled></li>
-                            <li><label>入学年份：</label><input type="text" value="2018-10-27" class="stuName" disabled></li>
-                            <li><label>创建时间：</label><input type="text" value="" class="stuName" disabled id="createTime"></li>
+                            <li><label>班级：</label><input type="text" value="<%=student.getClasses()%>" id="stuClass" class="stuName" disabled></li>
+                            <li><label>指导老师：</label><input type="text" value="<%=student.getTeacher()%>" id="stuTeacher" class="stuName" disabled></li>
+                            <li><label>入学年份：</label><input type="text" value="<%=student.getEnrolment()%>" id="stuEnro" class="stuName" disabled></li>
+                            <li><label>创建时间：</label><input type="text" value="<%=student.getCreateTime()%>" id="stuCreate" class="stuName" disabled id="createTime"></li>
                             <li><label>是否在读：</label>
-                                <select class="stuName">
-                                    <option>是</option>
-                                    <option>否</option>
+                                <select class="stuName" id="stuStatus">
+                                    <option <%if(student.isStatus()){%>value="是"<%}%> >是</option>
+                                    <option <%if(student.isStatus()){%>value="否"<%}%> >否</option>
                                 </select>
                             </li>
                         </ul>
