@@ -24,7 +24,13 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void addStudent(Student student) {
-        Student stu = studentDao.getStudentById(student.getId());
+        Boolean flag = true;
+        Student stu =null;
+        if(flag == true){
+            flag = false;
+        }else{
+            stu = studentDao.getStudentById(student.getId());
+        }
         if (stu == null) {
             System.out.println("Id is available");
             studentDao.addStudent(student);
