@@ -26,7 +26,7 @@ public class StudentServiceImpl implements StudentService {
     public void addStudent(Student student) {
         Boolean flag = true;
         Student stu =null;
-        if(flag == true){
+        if(flag){
             flag = false;
         }else{
             stu = studentDao.getStudentById(student.getId());
@@ -51,7 +51,6 @@ public class StudentServiceImpl implements StudentService {
             studentDao.editStudent(student);
         } else
             throw new ServerException("The user is empty");
-
     }
 
     @Override
@@ -71,9 +70,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> getStudentByName(String name) {
         List<Student> list = studentDao.getStudentByName(name);
-
-
-            return null;
+        if(list == null){
+            throw new ServerException("User does not exist");
+        }else
+            return list;
     }
 
 }

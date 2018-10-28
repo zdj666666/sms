@@ -24,9 +24,8 @@ public class stucontroller {
     @RequestMapping(value = "/check")
     public String itemList3() throws Exception{
 
-    //    List<Student> perStudent=studentService.getAllStudent();
-    //    System.out.println(perStudent.get(0).getName());
-
+        Student student=studentService.getStudentById("1");
+        System.out.println(student.getName());
         return "check";
     }
 
@@ -38,7 +37,6 @@ public class stucontroller {
         stu.getAge(12);
         stu.getCreateTime(new Date());
         studentService.addStudent(stu);
-
         return "add";
     }
 
