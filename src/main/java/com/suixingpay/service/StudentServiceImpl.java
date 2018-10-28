@@ -9,6 +9,7 @@
 package com.suixingpay.service;
 
 import com.suixingpay.dao.StudentDao;
+import com.suixingpay.exception.ServerException;
 import com.suixingpay.pojo.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,12 +25,11 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public void addStudent(Student student) {
         Student stu = studentDao.getStudentById(student.getId());
-        if(stu==null){
-            System.out.println("主键id不重复，可用");
+        if(stu == null){
+            System.out.println("Id is available");
             studentDao.addStudent(student);
-        }
-
-
+        }else
+            throw new ServerException("The id has been used");
     }
 
     @Override
@@ -39,21 +39,34 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public void editStudent(Student student) {
+        Student stu = studentDao.getStudentById(student.getId());
+        if(stu != null){
+            System.out.println("Users can be modified");
+            studentDao.editStudent(student);
+        }else
+            throw new ServerException("The user is empty");
 
     }
 
     @Override
     public List<Student> getAllStudent() {
-        return null;
+        return studentDao.getAllStudent();
     }
 
     @Override
     public Student getStudentById(String id) {
-        return null;
+        Student stu = studentDao.getStudentById(id);
+        if(stu != null){
+            return stu;
+        }else
+            throw new ServerException("User does not exist");
     }
 
     @Override
     public List<Student> getStudentByName(String name) {
+        List<Student> list = studentDao.getStudentByName(name);
+        if(list.size() == 0)
+
         return null;
     }
 }
