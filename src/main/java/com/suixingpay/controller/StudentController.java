@@ -23,7 +23,7 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
-
+    //要最先进入的首页====从这里开始的程序。
     @RequestMapping(value="index")
     public String login () {
         Student stu = new Student();
