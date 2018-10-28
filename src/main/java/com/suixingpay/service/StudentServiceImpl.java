@@ -40,7 +40,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void deleteStudent(List<String> ids) {
-
+        studentDao.deleteStudent(ids);
     }
 
     @Override
@@ -58,13 +58,19 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.getAllStudent();
     }
 
+    // 按照ID查找
     @Override
     public Student getStudentById(String id) {
         Student stu = studentDao.getStudentById(id);
-        if (stu != null) {
-            return stu;
-        } else
-            throw new ServerException("User does not exist");
+        if (id.trim().isEmpty()) {
+            throw new ServerException("ID cannot be empty!");
+        }else {
+            if (stu != null) {
+                return stu;
+            } else {
+                throw new ServerException("User does not exist!");
+            }
+        }
     }
 
     @Override
