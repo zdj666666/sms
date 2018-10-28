@@ -24,8 +24,8 @@ public class stucontroller {
     @RequestMapping(value = "/check")
     public String itemList3() throws Exception{
 
-    //    List<Student> perStudent=studentService.getAllStudent();
-    //    System.out.println(perStudent.get(0).getName());
+       List<Student> perStudent=studentService.getAllStudent();
+        System.out.println("===========_____-+++++"+perStudent.get(0).getName());
 
         return "check";
     }
