@@ -4,8 +4,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>添加管理系统</title>
-    <link rel="stylesheet" href="../css/add.css">
-    <script src="../js/add.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/add.css" type="text/css">
+    <script src="${pageContext.request.contextPath}/js/add.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -14,7 +14,7 @@
         <div class="header_right">
             <ul>
                 <li class="welwords">
-                    <img src="../img/user_img.jpg" alt="" title="" name="user_img">
+                    <img src="../../img/user_img.jpg" alt="" title="" name="user_img">
                     欢迎你的到来!
                 </li>
                 <li class="out">
