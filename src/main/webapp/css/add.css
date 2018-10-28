@@ -50,6 +50,14 @@
     color: black;
     padding-left: 20px;
 }
+.header .header_left{
+    width: 15%;
+    line-height: 60px;
+    font-size: 20px;
+    padding-left: 2%;
+    padding-top:0.5%;
+}
+
 /*content*/
 .content{
     display: flex;
@@ -75,11 +83,16 @@
     text-decoration: none;
     color: black;
 }
-.content .content_left li a:hover{
+.content .content_left li a span{
+    padding-right: 5px;
+}
+.content .content_left li .currentNav{
     border-radius: 20px;
-    background-color: #2099e9;
+    background:#36b0f4;
+    transition: background .3s ease, color .3s ease;
     color: #ffffff;
 }
+
 .content .content_right{
     flex: 1;
     background-color:#eceff4;
@@ -123,6 +136,8 @@
     color: #2099e9;
     font-weight: bolder;
 }
+
+
 .content .content_right  .detailsCard .personalInfo .cardTop .tit h4{
     font-size: 18px;
 }
