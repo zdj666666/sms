@@ -28,6 +28,4 @@ public interface StudentDao {
     Student getStudentById(String id);
     // 通过姓名获取学生信息
     List<Student> getStudentByName(String name);
-
-
 }

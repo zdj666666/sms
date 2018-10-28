@@ -55,7 +55,7 @@ public class Student implements Serializable {
         this.name = name;
     }
 
-    public Integer getAge() {
+    public Integer getAge(int i) {
         return age;
     }
 
@@ -87,7 +87,7 @@ public class Student implements Serializable {
         this.teacher = teacher;
     }
 
-    public Date getCreateTime() {
+    public Date getCreateTime(Date date) {
         return createTime;
     }
 
