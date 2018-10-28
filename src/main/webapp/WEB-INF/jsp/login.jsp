@@ -10,8 +10,9 @@
 <head>
     <meta charset="utf-8">
     <title>SuiXingSchool</title>
-    <link rel="stylesheet" type="text/css" href="./WEB-INF/style/logins.css" />
-    <script type="text/javascript" src="./WEB-INF/js/login.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/login.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style/loins.css" />
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/login.js"></script>
     <script>
         function submitBtn(obj){
             var name = document.getElementById("name");
@@ -28,7 +29,7 @@
 
 <body>
 <div class="login">
-    <video src="WEB-INF/fla/loginvideo.mp4" loop autoplay></video>
+    <video src="${pageContext.request.contextPath}/fla/loginvideo.mp4" loop autoplay></video>
     <div class="bg">
         <form method="post" action="login.html">
             <input type="text" placeholder="用户名" class="usersName" autofocus id="name" />
