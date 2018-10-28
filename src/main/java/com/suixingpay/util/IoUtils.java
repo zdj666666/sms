@@ -14,19 +14,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IoUtils {
-
+    static File file = null;
     /**
      * 把对象写入到文件中
      * @param t 任何对象
      * @param <T>
      */
     public static <T> void writeStudentInfo(T t){
-        File file = null;
+
         FileOutputStream fileOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
 
         try {
+
+            System.out.println("------???????????");
             file = new File("F:\\studentDb.txt");
+            System.out.println("这里的文件没有改变？？？？");
+            if (!file.exists()) {
+
+                file.createNewFile();
+
+            }
+
             fileOutputStream = new FileOutputStream(file, true);
             //如果数据库文件还没有被创建就创建有标识头的对象流，否则创建自定义的没有标识头的对象流
             if (file.length() < 1) {
@@ -65,6 +74,11 @@ public class IoUtils {
         FileInputStream fileInputStream = null;
         try {
             fileInputStream = new FileInputStream("F:\\studentDb.txt");
+            if (!file.exists()) {
+
+                file.createNewFile();
+
+            }
             objectInputStream = new ObjectInputStream(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();

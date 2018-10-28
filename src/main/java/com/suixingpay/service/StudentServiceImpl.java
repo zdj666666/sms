@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentDao studentDao;
@@ -25,10 +25,10 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public void addStudent(Student student) {
         Student stu = studentDao.getStudentById(student.getId());
-        if(stu == null){
+        if (stu == null) {
             System.out.println("Id is available");
             studentDao.addStudent(student);
-        }else
+        } else
             throw new ServerException("The id has been used");
     }
 
@@ -40,10 +40,10 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public void editStudent(Student student) {
         Student stu = studentDao.getStudentById(student.getId());
-        if(stu != null){
+        if (stu != null) {
             System.out.println("Users can be modified");
             studentDao.editStudent(student);
-        }else
+        } else
             throw new ServerException("The user is empty");
 
     }
@@ -56,17 +56,18 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public Student getStudentById(String id) {
         Student stu = studentDao.getStudentById(id);
-        if(stu != null){
+        if (stu != null) {
             return stu;
-        }else
+        } else
             throw new ServerException("User does not exist");
     }
 
     @Override
     public List<Student> getStudentByName(String name) {
         List<Student> list = studentDao.getStudentByName(name);
-        if(list.size() == 0)
 
-        return null;
+
+            return null;
     }
+
 }

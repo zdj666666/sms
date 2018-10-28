@@ -1,7 +1,8 @@
-package com.suixingpay.controller;
+package com.example.controller;
 
 import com.suixingpay.pojo.Student;
 import com.suixingpay.service.StudentService;
+import com.suixingpay.service.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,28 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 /**
- * Created by acer1 on 2018/10/27.
+ * Created by Administrator on 2018/10/28.
  */
-
 @Controller
-@RequestMapping("/student")
-public class stucontroller {
+public class MainController {
 
     @Autowired
     StudentService studentService;
 
-
-    @RequestMapping(value = "/check")
-    public String itemList3() throws Exception{
-
+    @RequestMapping(value={"/noConnection"})
+    public String noJDBConnection(){
         List<Student> perStudent=studentService.getAllStudent();
         System.out.println(perStudent.get(0).getName());
-
-        return "check";
+        return "login";
     }
-
-
-
-
-
 }

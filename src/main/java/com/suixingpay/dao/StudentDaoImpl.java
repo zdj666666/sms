@@ -10,12 +10,14 @@ package com.suixingpay.dao;
 
 import com.suixingpay.pojo.Student;
 import com.suixingpay.util.IoUtils;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+@Service
 public class StudentDaoImpl implements StudentDao{
     @Override
     public void addStudent(Student student) {
