@@ -40,6 +40,17 @@ public class StudentController {
         return "add";
     }
 
+    @RequestMapping(value={"/details.action"})
+    public String details(){
+        Student stu = new Student();
+        stu.setId("1");
+        stu.setName("xl");
+        stu.getAge(12);
+        stu.getCreateTime(new Date());
+        studentService.addStudent(stu);
+        return "details";
+    }
+
 
 
 
