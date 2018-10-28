@@ -31,9 +31,9 @@
 <div class="login">
     <video src="${pageContext.request.contextPath}/fla/loginvideo.mp4" loop autoplay></video>
     <div class="bg">
-        <form method="post" action="login.html">
-            <input type="text" placeholder="用户名" class="usersName" autofocus id="name" />
-            <input type="password" placeholder="密码"  class="loginPassword" id="password" />
+        <form method="post" action="login">
+            <input type="text" placeholder="用户名" class="usersName" name="name" autofocus id="name" />
+            <input type="password" placeholder="密码"  class="loginPassword" name="password" id="password" />
             <input type="button" class="loginBtn" onclick="submitBtn(this)"/>
             <input type="button" class="reBtn" />
         </form>
