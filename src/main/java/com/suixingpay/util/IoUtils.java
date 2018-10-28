@@ -26,16 +26,7 @@ public class IoUtils {
         ObjectOutputStream objectOutputStream = null;
 
         try {
-
-            System.out.println("------???????????");
-            file = new File("D:\\studentDb.txt");
-            System.out.println("这里的文件没有改变？？？？");
-            if (!file.exists()) {
-
-                file.createNewFile();
-
-            }
-
+            file = new File("F:\\studentDb.txt");
             fileOutputStream = new FileOutputStream(file, true);
             //如果数据库文件还没有被创建就创建有标识头的对象流，否则创建自定义的没有标识头的对象流
             if (file.length() < 1) {
@@ -73,7 +64,7 @@ public class IoUtils {
         ObjectInputStream objectInputStream = null;
         FileInputStream fileInputStream = null;
         try {
-            fileInputStream = new FileInputStream("D:\\studentDb.txt");
+            fileInputStream = new FileInputStream("F:\\studentDb.txt");
             objectInputStream = new ObjectInputStream(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();
@@ -115,7 +106,7 @@ public class IoUtils {
         File file = null;
         FileOutputStream fileOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
-        file = new File("D:\\studentDb.txt");
+        file = new File("F:\\studentDb.txt");
         try {
             for(int i = 0;i<list.size();i++){
                 // 第一次覆盖时需要覆盖文件并且打印出序列化的头否则不需要
