@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SuiXingSchool</title>
+<link rel="stylesheet" type="text/css" href="../main/webapp/style/login.css" />
+</head>
+
+<body>
+	<div class="login">
+    	<video src="../main/webapp/fla/loginvideo.mp4" loop autoplay></video>
+        <div class="bg">
+        <form method="post" action="check.html">
+        <input type="text" placeholder="用户名" class="usersName" autofocus id="name" />
+        <input type="password" placeholder="密码"  class="loginPassword" id="password" />
+        <input type="submit" class="loginBtn" onclick="submitBtn(this)" value="登录"/>
+        <input type="button" class="reBtn" value="注册" />
+        </form>
+        <ul class="help">
+        	<li>回到主页</a></li>
+        	<li>登录遇到问题</li>
+            <li class="ll">忘记密码</li>
+        </ul>
+        </div>
+    </div>
+    <script src="../main/webapp/js/login.js"></script>
+    <script>
+        function submitBtn(obj){
+            var name = document.getElementById("name");
+            var psd = document.getElementById("password");
+            if(name.value == ""  || psd.value == ""){
+                alert("用户名和密码不能为空！");
+            }else{
+                obj.type = "submit";
+            }
+        }
+    </script>
+</body>
+</html>
