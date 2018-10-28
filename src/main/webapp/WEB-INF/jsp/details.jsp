@@ -10,23 +10,17 @@
     <script>
         function change() {
             var id = document.getElementById("stuId").value;
-            alert("11111");
+
             var name = document.getElementById("stuName").value;
-            alert("22222");
+
             var age = document.getElementById("stuAge").value;
-            alert("333333");
+
             /*var sex = document.getElementById("stuSex").value;
-            alert("44444444");
             var classes = document.getElementById("stuClass").value;
-            alert("555555555");
             var teacher = document.getElementById("stuTeacher").value;
-            alert("6666666");
             var createTime = document.getElementById("stuCreate").value;
-            alert("77777777");
             var enrolment = document.getElementById("stuEnro").value;
-            alert("88888888");
-            var status = document.getElementById("stuStatus").value;
-            alert("99999999");*/
+            var status = document.getElementById("stuStatus").value;;*/
             window.location.href="save?id="+id+"&name="+name+"&age="+age;
         }
 

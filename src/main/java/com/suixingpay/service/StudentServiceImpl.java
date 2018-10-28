@@ -64,7 +64,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student getStudentById(String id) {
         Student stu = studentDao.getStudentById(id);
-        if (id.trim().isEmpty()) {
+        if (id==null||id.trim().isEmpty()) {
             throw new ServerException("ID cannot be empty!");
         }else {
             if (stu != null) {
