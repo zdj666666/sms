@@ -3,9 +3,11 @@ server:
 
 #配置jsp页面
 #页面默认前缀目录
+#这里面一个空格都影响真实操作
 spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
+    mvc:
+      view:
+        prefix:  /WEB-INF/jsp/
+        suffix: .jsp
+
 
