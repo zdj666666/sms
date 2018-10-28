@@ -37,7 +37,7 @@
             </ul>
         </div>
         <div class="content_right">
-            <div class="detailsTit" style="font-size:14px; font-weight:550; color:darkslategrey">
+            <div class="detailsTit" style="font-size:14px;font-weight:550; color:darkslategrey">
                 Personal informations
 
             </div>

@@ -51,15 +51,15 @@
     border-radius: 10px;
     display: inline-block;
 }
-.header .header_right ul li.out a{
+.header .header_right ul li.out a {
     text-decoration: none;
     color: black;
     padding-left: 5px;
     line-height: 60px;
-    height:60px;
+    height: 60px;
     display: block;
     float: left;
-
+}
 .header .header_right ul li  .exit{
     color:#36b0f4;
     padding-left:5px;

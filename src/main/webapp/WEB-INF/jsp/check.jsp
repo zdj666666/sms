@@ -13,6 +13,24 @@
     <meta charset="UTF-8">
     <title>学生管理系统</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/check.css">
+    <script>
+        function deleteStudent(){
+            alert("999999999999");
+            var boxes = document.getElementsByName("per");
+            var val = [];
+            for(i in boxes ){
+                if(boxes[i].checked == true){
+                    val.push(boxes[i].value);
+                    alert(boxes[i].value);
+                }
+            }
+
+        window.location.href="deleteStudent?allId="+val;
+        }
+
+
+    </script>
+
 </head>
 <body>
 <div id="wrap">
@@ -51,15 +69,15 @@
                     <input type="text" class="name" placeholder="姓名">
                     <input type="text" class="teacher" placeholder="指导老师">
                     <input type="button" class="check_but" value="查询">
-                    <input type="button" class="add_but" value="增加" onclick="window.open('add.html')" >
-                    <input type="button" class="del_but" value="删除" onclick="deleSome()">
+                    <input type="button" class="add_but" value="增加" onclick="window.open('addStudent')" >
+                    <input type="button" class="del_but" value="删除" onclick="deleteStudent()">
                 </div>
             </div>
             <div class="info">
                 <table class="info_table">
                     <thead>
                     <tr>
-                        <th><input type="checkbox" class="checkall" onclick="checkAll()">学号</th>
+                        <th><input type="checkbox"  class="checkall" onclick="checkAll()">学号</th>
                         <th>姓名</th>
                         <th>年龄</th>
                         <th>性别</th>
@@ -76,7 +94,7 @@
                     <%List<Student> reStu=(List<Student>)request.getAttribute("allStudent");%>
                     <% for(Student stu:reStu){%>
                         <tr>
-                            <td><input type="checkbox" class="checkone"><%=stu.getId()%></td>
+                            <td><input type="checkbox" class="checkone" name="per" value=<%=stu.getId()%> ><%=stu.getId()%></td>
                             <td><%=stu.getName()%></td>
                             <td><%=stu.getAge()%></td>
                             <td><%=stu.getSex()%></td>
@@ -86,7 +104,7 @@
                             <td><%=stu.getEnrolment()%></td>
                             <td><%=stu.isStatus()%></td>
                             <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                            <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
+                            <td><input type="button" value="详情" class="detail_butt" onclick="getChecked()"></td>
                         </tr>
                     <%}%>
                     </tbody>

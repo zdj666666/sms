@@ -38,8 +38,9 @@ public class StudentController {
     public String itemList3(HttpServletRequest request) throws Exception{
         String getName=request.getParameter("name");
         String getPassword=request.getParameter("password");
+        System.out.println("=========这里的页面是:==="+getName);
        List<Student> perStudent=studentService.getStudentByName(getName);
-        if(perStudent.isEmpty()||perStudent==null){
+        if(perStudent==null||perStudent.isEmpty()){
             System.out.println("您的用户名输入错误");
             //返回登录页面
             return "login";

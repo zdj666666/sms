@@ -82,4 +82,10 @@ public class StudentServiceImpl implements StudentService {
             return list;
     }
 
+    @Override
+    public void deteleStudentById(List<String> stu) {
+         studentDao.deleteStudent(stu);
+
+    }
+
 }
