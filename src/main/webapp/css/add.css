@@ -18,6 +18,7 @@
     line-height: 60px;
     font-size: 20px;
     padding-left: 2%;
+    padding-top:0.5%;
 }
 .header .header_right{
     flex: 1;
