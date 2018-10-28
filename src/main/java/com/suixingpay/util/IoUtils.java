@@ -74,11 +74,6 @@ public class IoUtils {
         FileInputStream fileInputStream = null;
         try {
             fileInputStream = new FileInputStream("D:\\studentDb.txt");
-            if (!file.exists()) {
-
-                file.createNewFile();
-
-            }
             objectInputStream = new ObjectInputStream(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();

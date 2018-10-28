@@ -23,9 +23,19 @@ public class StudentController {
     StudentService studentService;
 
 
+    @RequestMapping(value="index")
+    public String login () {
+        Student stu = new Student();
+        stu.setId("1");
+        stu.setName("xl");
+        stu.setAge(12);
+        stu.setCreateTime(new Date());
+        studentService.addStudent(stu);
+        return "login";
+    }
+
     @RequestMapping(value = "/login")
     public String itemList3(HttpServletRequest request) throws Exception{
-
         String getName=request.getParameter("name");
         String getPassword=request.getParameter("password");
        List<Student> perStudent=studentService.getStudentByName(getName);
@@ -34,32 +44,24 @@ public class StudentController {
             return "login";
         }else{
             System.out.println("您的用户名输入正确！！！");
-
-
+            List<Student> studentsList = studentService.getAllStudent();
+            request.setAttribute("allStudent",studentsList);
             return "check";
         }
 
     }
 
+
+
+
+
     @RequestMapping(value={"/add.action"})
     public String add(){
-        Student stu = new Student();
-        stu.setId("1");
-        stu.setName("xl");
-        stu.getAge(12);
-        stu.getCreateTime(new Date());
-        studentService.addStudent(stu);
         return "add";
     }
 
     @RequestMapping(value={"/details.action"})
     public String details(){
-        Student stu = new Student();
-        stu.setId("1");
-        stu.setName("xl");
-        stu.getAge(12);
-        stu.getCreateTime(new Date());
-        studentService.addStudent(stu);
         return "details";
     }
 
