@@ -86,7 +86,7 @@
                             <td><%=stu.getEnrolment()%></td>
                             <td><%=stu.isStatus()%></td>
                             <td><input type="button" value="修改" class="change_butt" onclick="window.open('details.html')"></td>
-                            <td><input type="button" value="详情" class="detail_butt" onclick="window.open('details.html')"></td>
+                            <td><a href="${pageContext.request.contextPath}/student/details.action"><input type="button" value="详情" class="detail_butt" ></a></td>
                         </tr>
                     <%}%>
                     </tbody>
