@@ -20,11 +20,9 @@
             var allId = []
             for(i in boxes){
                 if(boxes[i].checked){
-                    alert(boxes[i].value);
                     allId.push(boxes[i].value);
                 }
             }
-            alert(allId);
             window.location.href="deleteStudent?allId="+allId;
         }
 
