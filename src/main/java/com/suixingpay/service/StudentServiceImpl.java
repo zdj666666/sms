@@ -21,10 +21,10 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentDao studentDao;
+    Boolean flag = true;
 
     @Override
     public void addStudent(Student student) {
-        Boolean flag = true;
         Student stu =null;
         if(flag){
             flag = false;
@@ -45,6 +45,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void editStudent(Student student) {
+
+        System.out.print("====================？？？？？？？"+student.getName());
         Student stu = studentDao.getStudentById(student.getId());
         if (stu != null) {
             System.out.println("Users can be modified");
@@ -62,7 +64,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student getStudentById(String id) {
         Student stu = studentDao.getStudentById(id);
-        if (id.trim().isEmpty()) {
+        if (id==null||id.trim().isEmpty()) {
             throw new ServerException("ID cannot be empty!");
         }else {
             if (stu != null) {
@@ -80,6 +82,12 @@ public class StudentServiceImpl implements StudentService {
             throw new ServerException("User does not exist");
         }else
             return list;
+    }
+
+    @Override
+    public void deteleStudentById(List<String> stu) {
+         studentDao.deleteStudent(stu);
+
     }
 
 }

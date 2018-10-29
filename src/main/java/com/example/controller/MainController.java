@@ -18,7 +18,9 @@ public class MainController {
 
     @Autowired
     StudentService studentService;
-
+    /*这里是测试操作。
+     * 在 suixingpay/controller/StudentController中为真正入口
+      * */
     @RequestMapping(value={"/noConnection"})
     public String noJDBConnection(){
         List<Student> perStudent=studentService.getAllStudent();

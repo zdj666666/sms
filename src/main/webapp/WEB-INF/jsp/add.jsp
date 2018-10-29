@@ -6,6 +6,20 @@
     <title>添加管理系统</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/add.css" type="text/css">
     <script src="${pageContext.request.contextPath}/js/add.js"></script>
+    <script>
+        function addStudent(){
+
+
+            var getStuId=document.getElementById("Stunumber").value;
+            var getStuName=document.getElementById("Name").value;
+            var getStuAge=document.getElementById("Age").value;
+            window.location.href="addStudent?StuId="+getStuId+"&Name="+getStuName+"&Age="+getStuAge;
+
+        }
+
+
+    </script>
+
 </head>
 <body>
 <div id="wrap">
@@ -19,7 +33,7 @@
                 </li>
                 <li class="out">
                     <span></span>
-                    <a href="check.html">退出</a>
+                    <a href="../../../../test/check.html">退出</a>
                 </li>
             </ul>
         </div>
@@ -43,29 +57,29 @@
                         <ul class="infoList" id="info">
                             <li>
                                 <label>学 号：</label>
-                                <input type="text" value="" class="stuName" onblur="isStuNumber()" id="Stunumber">
+                                <input type="text" value="" class="stuName"  id="Stunumber">
                                 <span id="StunumberMsg"></span>
                             </li>
                             <li>
                                 <label>姓 名：</label>
-                                <input type="text" value="" class="stuName" onblur="isName()" id="Name">
+                                <input type="text" value="" class="stuName"  id="Name">
                                 <span id="NameMsg"></span>
                             </li>
                             <li>
                                 <label>年 龄：</label>
-                                <input type="text" value="" class="stuName" onblur="isAge()" id="Age">
+                                <input type="text" value="" class="stuName"  id="Age">
                                 <span id="AgeMsg"></span>
                             </li>
                             <li>
                                 <label>性 别：</label>
-                                <select class="sex">
+                                <select class="sex" >
                                     <option>男</option>
                                     <option>女</option>
                                 </select>
                             </li>
                             <li>
                                 <label>班 级：</label>
-                                <input type="text" value="" class="stuName" onblur="isClass()" id="Class">
+                                <input type="text"  class="stuName"  id="Class">
                                 <span id="ClassMsg"></span>
                             </li>
                             <li>
@@ -116,7 +130,7 @@
                         </ul>
                     </div>
                     <div class="buttons">
-                        <input type="submit" value="添加">
+                        <input type="submit" value="添加" onclick="addStudent()" >
                         <input type="reset" value="取消">
                     </div>
                 </div>

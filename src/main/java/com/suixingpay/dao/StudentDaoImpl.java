@@ -36,6 +36,7 @@ public class StudentDaoImpl implements StudentDao{
                     iterator.remove();
                 }
             }
+            iterator = students.listIterator();
         }
         // 覆盖原有文件信息
         IoUtils.coverStudentInfo(students);
