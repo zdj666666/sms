@@ -21,10 +21,10 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentDao studentDao;
+    Boolean flag = true;
 
     @Override
     public void addStudent(Student student) {
-        Boolean flag = true;
         Student stu =null;
         if(flag){
             flag = false;
